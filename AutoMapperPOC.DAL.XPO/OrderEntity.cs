@@ -9,7 +9,9 @@ namespace AutoMapperPOC.DAL.XPO
 {
     public class OrderEntity : XPObject
     {
+        [Key]
         public int ID { get; set; }
+        public string Name { get; set; }
         public XPCollection<LineEntity> Lines { get; set; }
     }
 }

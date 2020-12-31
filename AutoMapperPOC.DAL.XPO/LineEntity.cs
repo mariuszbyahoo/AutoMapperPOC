@@ -4,6 +4,7 @@ namespace AutoMapperPOC.DAL.XPO
 {
     public class LineEntity : XPObject
     {
+        [Key]
         public int ID { get; set; }
         public string Name { get; set; }
         public string Content { get; set; }

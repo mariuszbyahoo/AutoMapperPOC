@@ -9,11 +9,19 @@ namespace AutoMapperPOC.DAL.EF
 {
     public class POCContext : DbContext
     {
-        DbSet<OrderEntity> Orders { get; set; }
-        DbSet<LineEntity> Lines { get; set; }
+        public DbSet<OrderEntity> Orders { get; set; }
+        public DbSet<LineEntity> Lines { get; set; }
 
+        public IEnumerable<OrderEntity> GetOrders()
+        {
+            return Orders.AsEnumerable();
+        }
+        public IEnumerable<LineEntity> GetLines()
+        {
+            return Lines.AsEnumerable();
+        }
         public POCContext()
-            : base("name=AutoMapperPOCEntityFramework")
+            : base("data source = DESKTOP-TS4FMKK\\INSERTGT; initial catalog = AutoMapperPOC;Integrated Security = true")
         {
         }
     }
