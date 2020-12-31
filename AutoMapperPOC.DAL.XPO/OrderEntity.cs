@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace AutoMapperPOC.DAL.XPO
 {
+    [Persistent("OrderEntities")]
     public class OrderEntity : XPObject
     {
-        [Key]
-        public int ID { get; set; }
+        public int OID { get; set; }
         public string Name { get; set; }
         public XPCollection<LineEntity> Lines { get; set; }
     }

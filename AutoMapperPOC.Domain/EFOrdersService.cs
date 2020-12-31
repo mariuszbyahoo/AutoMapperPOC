@@ -26,5 +26,21 @@ namespace AutoMapperPOC.Domain
             }
             return res;
         }
+
+        public void WygenerujWpisy()
+        {
+            var entities = new List<OrderEntity>();
+            for (int i = 0; i < 15000; i++)
+            {
+                var orderEntity = new OrderEntity() { Name = $"Zamówienie nr. {i}", Lines = new List<LineEntity>() };
+                for (int j = 0; j < 5; j++)
+                {
+                    orderEntity.Lines.Add(new LineEntity() { Name = $"Linia nr. {j}", Content = $"Content linii nr. {j} w zamówieniu nr. {i}" });
+                }
+                entities.Add(orderEntity);
+            }
+            _ctx.Orders.AddRange(entities);
+            _ctx.SaveChanges();
+        }
     }
 }

@@ -17,6 +17,11 @@ namespace AutoMapperPOC.Domain
                     cfg.CreateMap<Order, DAL.EF.OrderEntity>();
                     cfg.CreateMap<DAL.EF.LineEntity, OrderLine>();
                     cfg.CreateMap<OrderLine, DAL.EF.LineEntity>();
+
+                    cfg.CreateMap<DAL.XPO.OrderEntity, Order>();
+                    cfg.CreateMap<Order, DAL.XPO.OrderEntity>();
+                    cfg.CreateMap<DAL.XPO.LineEntity, OrderLine>();
+                    cfg.CreateMap<OrderLine, DAL.XPO.LineEntity>();
                 });
         }
     }

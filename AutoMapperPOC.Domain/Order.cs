@@ -8,7 +8,7 @@ namespace AutoMapperPOC.Domain
 {
     public class Order
     {
-        public int ID { get; set; }
+        public int OID { get; set; }
         public string Name { get; set; }
         public IList<OrderLine> Lines { get; set; }
     }

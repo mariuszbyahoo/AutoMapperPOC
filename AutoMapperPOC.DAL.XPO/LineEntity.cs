@@ -2,10 +2,10 @@
 
 namespace AutoMapperPOC.DAL.XPO
 {
+    [Persistent("LineEntities")]
     public class LineEntity : XPObject
     {
-        [Key]
-        public int ID { get; set; }
+        public int OID { get; set; }
         public string Name { get; set; }
         public string Content { get; set; }
     }
