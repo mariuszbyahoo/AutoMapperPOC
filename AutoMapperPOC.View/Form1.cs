@@ -28,13 +28,15 @@ namespace AutoMapperPOC.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.gridControl1.DataSource = _efSrv.GetOrders();
+            var orders = _efSrv.GetOrders();
+            this.gridControl1.DataSource = orders;
             this.gridControl1.Refresh();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.gridControl1.DataSource = _xpoSrv.GetOrders();
+            var orders = _xpoSrv.GetOrders();
+            this.gridControl1.DataSource = orders;
             this.gridControl1.Refresh();
         }
 

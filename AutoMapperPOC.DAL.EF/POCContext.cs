@@ -20,6 +20,15 @@ namespace AutoMapperPOC.DAL.EF
         {
             return Lines.AsEnumerable();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<LineEntity>()
+                        .HasRequired<OrderEntity>(l => l.Order)
+                        .WithMany(o => o.Lines)
+                        .HasForeignKey<int>(l => l.OrderId);
+        }
+
         public POCContext()
             : base("data source = DESKTOP-TS4FMKK\\INSERTGT; initial catalog = AutoMapperPOC;Integrated Security = true")
         {

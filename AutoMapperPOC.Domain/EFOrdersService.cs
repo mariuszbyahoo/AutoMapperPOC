@@ -32,10 +32,10 @@ namespace AutoMapperPOC.Domain
             var entities = new List<OrderEntity>();
             for (int i = 0; i < 15000; i++)
             {
-                var orderEntity = new OrderEntity() { Name = $"Zamówienie nr. {i}", Lines = new List<LineEntity>() };
+                var orderEntity = new OrderEntity() { OID=(i+1), Name = $"Zamówienie nr. {i}", Lines = new List<LineEntity>() };
                 for (int j = 0; j < 5; j++)
                 {
-                    orderEntity.Lines.Add(new LineEntity() { Name = $"Linia nr. {j}", Content = $"Content linii nr. {j} w zamówieniu nr. {i}" });
+                    orderEntity.Lines.Add(new LineEntity() { Name = $"Linia nr. {j}", Content = $"Content linii nr. {j} w zamówieniu nr. {i}", Order = orderEntity, OrderId = orderEntity.OID });
                 }
                 entities.Add(orderEntity);
             }

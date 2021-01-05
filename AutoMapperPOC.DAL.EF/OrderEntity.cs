@@ -12,6 +12,6 @@ namespace AutoMapperPOC.DAL.EF
         [Key]
         public int OID { get; set; }
         public string Name { get; set; }
-        public IList<LineEntity> Lines { get; set; }
+        public ICollection<LineEntity> Lines { get; set; }
     }
 }

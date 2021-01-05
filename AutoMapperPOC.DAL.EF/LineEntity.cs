@@ -13,5 +13,7 @@ namespace AutoMapperPOC.DAL.EF
         public int OID { get; set; }
         public string Name { get; set; }
         public string Content { get; set; }
+        public int OrderId { get; set; }
+        public OrderEntity Order { get; set; }
     }
 }
