@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using AutoMapper.Extensions.ExpressionMapping;
 using AutoMapperPOC.DAL.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,15 +13,13 @@ namespace AutoMapperPOC.Domain
     public class EFOrdersService : IOrdersService
     {
         private readonly POCContext _ctx;
-        private readonly IMapper _mapper;
         public EFOrdersService()
         {
             _ctx = new POCContext();
-            _mapper = AutoMapperConfiguration.GetConfig().CreateMapper();
         }
         public IList<Order> GetOrders()
         {
-            return _mapper.Map<IList<Order>>(_ctx.GetOrders());
+            return _ctx.Orders.UseAsDataSource(AutoMapperConfiguration.GetConfig()).For<Order>().ToList();
         }
 
         public void WygenerujWpisy()
