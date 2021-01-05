@@ -19,9 +19,9 @@ namespace AutoMapperPOC.Domain
             XpoDefault.ConnectionString = "data source = DESKTOP-TS4FMKK\\INSERTGT; initial catalog = AutoMapperPOC;Integrated Security = true";
             _session = XpoDefault.Session;
         }
-        public IList<Order> GetOrders()
+        public IQueryable<Order> GetOrders()
         {
-            return _session.Query<OrderEntity>().UseAsDataSource(AutoMapperConfiguration.GetConfig()).For<Order>().ToList();
+            return _session.Query<OrderEntity>().UseAsDataSource(AutoMapperConfiguration.GetConfig()).For<Order>();
         }
     }
 }

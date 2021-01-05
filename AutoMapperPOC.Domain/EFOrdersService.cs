@@ -17,9 +17,9 @@ namespace AutoMapperPOC.Domain
         {
             _ctx = new POCContext();
         }
-        public IList<Order> GetOrders()
+        public IQueryable<Order> GetOrders()
         {
-            return _ctx.Orders.UseAsDataSource(AutoMapperConfiguration.GetConfig()).For<Order>().ToList();
+            return _ctx.Orders.UseAsDataSource(AutoMapperConfiguration.GetConfig()).For<Order>();
         }
 
         public void WygenerujWpisy()
