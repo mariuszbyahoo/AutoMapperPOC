@@ -14,7 +14,7 @@ namespace AutoMapperPOC.DAL.EF
 
         public IEnumerable<OrderEntity> GetOrders()
         {
-            return Orders.AsEnumerable();
+            return Orders.Include(o => o.Lines).AsEnumerable();
         }
         public IEnumerable<LineEntity> GetLines()
         {

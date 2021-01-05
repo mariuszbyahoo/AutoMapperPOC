@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using AutoMapperPOC.DAL.EF;
-using AutoMapperPOC.Domain;
+﻿using AutoMapperPOC.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,13 +14,10 @@ namespace AutoMapperPOC.View
     {
         private readonly EFOrdersService _efSrv;
         private readonly XPOrdersService _xpoSrv;
-        private readonly string customColumnName1 = "Lines count";
-        IList<Order> Orders { get; set; }
         public Form1()
         {
             _efSrv = new EFOrdersService();
             _xpoSrv = new XPOrdersService();
-            Orders = new List<Order>();
             InitializeComponent();
             AutoMapperConfiguration.GetConfig();
         }
