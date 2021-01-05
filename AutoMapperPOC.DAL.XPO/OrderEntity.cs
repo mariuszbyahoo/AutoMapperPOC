@@ -11,7 +11,13 @@ namespace AutoMapperPOC.DAL.XPO
     public class OrderEntity : XPObject
     {
         public string Name { get; set; }
-        public XPCollection<LineEntity> Lines { get; set; }
+
+        [Association("Orders-Lines")]
+        public XPCollection<LineEntity> Lines { 
+            get {
+                return GetCollection<LineEntity>(nameof(Lines));
+            } 
+        }
 
         public OrderEntity(Session session): base(session)
         {

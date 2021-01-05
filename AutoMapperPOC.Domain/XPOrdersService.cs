@@ -23,7 +23,7 @@ namespace AutoMapperPOC.Domain
         public IList<Order> GetOrders()
         {
             var result = new List<Order>();
-            List<OrderEntity> dbResponse = _session.Query<OrderEntity>().ToList(); // invalid operation exception duplicate mapping at column OID
+            List<OrderEntity> dbResponse = _session.Query<OrderEntity>().ToList(); 
             foreach (var order in dbResponse)
             {
                 result.Add(_mapper.Map<Order>(order));
