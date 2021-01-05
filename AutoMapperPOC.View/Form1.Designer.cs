@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -37,7 +38,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.button3 = new System.Windows.Forms.Button();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -63,6 +63,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(632, 278);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(12, 246);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(608, 20);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Wygeneruj 15k wpisów";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -138,16 +148,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(306, 25);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(12, 246);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(608, 20);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Wygeneruj 15k wpisów";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // layoutControlItem4
             // 

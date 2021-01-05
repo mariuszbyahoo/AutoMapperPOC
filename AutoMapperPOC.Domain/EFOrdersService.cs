@@ -19,12 +19,7 @@ namespace AutoMapperPOC.Domain
         }
         public IList<Order> GetOrders()
         {
-            var res = new List<Order>();
-            foreach (var item in _ctx.GetOrders())
-            {
-                res.Add(_mapper.Map<Order>(item));
-            }
-            return res;
+            return _mapper.Map<IList<Order>>(_ctx.GetOrders());
         }
 
         public void WygenerujWpisy()

@@ -16,6 +16,7 @@ namespace AutoMapperPOC.View
     {
         private readonly EFOrdersService _efSrv;
         private readonly XPOrdersService _xpoSrv;
+        private readonly string customColumnName1 = "Lines count";
         IList<Order> Orders { get; set; }
         public Form1()
         {

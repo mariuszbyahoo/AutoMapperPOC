@@ -11,5 +11,7 @@ namespace AutoMapperPOC.Domain
         public int OID { get; set; }
         public string Name { get; set; }
         public IList<OrderLine> Lines { get; set; }
+
+        public int LinesCount { get { return Lines.Count; } }
     }
 }

@@ -22,13 +22,7 @@ namespace AutoMapperPOC.Domain
         }
         public IList<Order> GetOrders()
         {
-            var result = new List<Order>();
-            List<OrderEntity> dbResponse = _session.Query<OrderEntity>().ToList(); 
-            foreach (var order in dbResponse)
-            {
-                result.Add(_mapper.Map<Order>(order));
-            }
-            return result;
+            return _mapper.Map<IList<Order>>(_session.Query<OrderEntity>());
         }
     }
 }
