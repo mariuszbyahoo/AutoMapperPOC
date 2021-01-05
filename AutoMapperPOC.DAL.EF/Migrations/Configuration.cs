@@ -9,8 +9,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "AutoMapperPOC.DAL.EF.POCContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(AutoMapperPOC.DAL.EF.POCContext context)

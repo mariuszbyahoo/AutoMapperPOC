@@ -7,13 +7,13 @@ namespace AutoMapperPOC.DAL.EF.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class specifyfks : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(specifyfks));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101050756193_specify-fks"; }
+            get { return "202101051210555_initial"; }
         }
         
         string IMigrationMetadata.Source
