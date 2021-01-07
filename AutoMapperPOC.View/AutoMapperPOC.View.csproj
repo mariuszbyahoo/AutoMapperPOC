@@ -39,16 +39,37 @@
     <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.BonusSkins.v20.1" />
-    <Reference Include="DevExpress.Data.Desktop.v20.1" />
-    <Reference Include="DevExpress.Data.v20.1" />
-    <Reference Include="DevExpress.Utils.v20.1" />
-    <Reference Include="DevExpress.Sparkline.v20.1.Core" />
-    <Reference Include="DevExpress.XtraEditors.v20.1" />
-    <Reference Include="DevExpress.Printing.v20.1.Core" />
-    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="AutoMapper.Extensions.ExpressionMapping, Version=4.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.Extensions.ExpressionMapping.4.1.0\lib\net461\AutoMapper.Extensions.ExpressionMapping.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 20.2\Components\Bin\Framework\DevExpress.Data.Desktop.v20.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 20.2\Components\Bin\Framework\DevExpress.Data.v20.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 20.2\Components\Bin\Framework\DevExpress.Utils.v20.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 20.2\Components\Bin\Framework\DevExpress.Xpo.v20.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 20.2\Components\Bin\Framework\DevExpress.XtraEditors.v20.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 20.2\Components\Bin\Framework\DevExpress.XtraGrid.v20.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\DevExpress 20.2\Components\Bin\Framework\DevExpress.XtraLayout.v20.2.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -57,7 +78,12 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -105,6 +131,10 @@
     <ProjectReference Include="..\AutoMapperPOC.DAL.EF\AutoMapperPOC.DAL.EF.csproj">
       <Project>{68D1D455-919F-4203-9674-AD14A377E7E6}</Project>
       <Name>AutoMapperPOC.DAL.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AutoMapperPOC.DAL.XPO\AutoMapperPOC.DAL.XPO.csproj">
+      <Project>{35C6585E-8E3E-4341-8DB2-873EE6B5EDC8}</Project>
+      <Name>AutoMapperPOC.DAL.XPO</Name>
     </ProjectReference>
     <ProjectReference Include="..\AutoMapperPOC.Domain\AutoMapperPOC.Domain.csproj">
       <Project>{401AEBF1-E108-42D1-8527-AF1BC325FF75}</Project>

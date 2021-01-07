@@ -1,4 +1,7 @@
-﻿namespace AutoMapperPOC.View
+﻿using AutoMapperPOC.DAL.XPO;
+using DevExpress.Data.Linq;
+
+namespace AutoMapperPOC.View
 {
     partial class Form1
     {
@@ -28,17 +31,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.xpInstantFeedbackSource1 = new DevExpress.Xpo.XPInstantFeedbackSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colOID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLines = new DevExpress.XtraGrid.Columns.GridColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.entityInstantFeedbackSource1 = new DevExpress.Data.Linq.EntityInstantFeedbackSource();
+            this.linqInstantFeedbackSource1 = new DevExpress.Data.Linq.LinqInstantFeedbackSource();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -86,6 +96,7 @@
             // 
             // gridControl1
             // 
+            this.gridControl1.DataSource = this.xpInstantFeedbackSource1;
             this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -94,10 +105,43 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // xpInstantFeedbackSource1
+            // 
+            this.xpInstantFeedbackSource1.DefaultSorting = "Name ASC";
+            this.xpInstantFeedbackSource1.DisplayableProperties = "Name;Lines";
+            this.xpInstantFeedbackSource1.ObjectType = typeof(AutoMapperPOC.DAL.XPO.OrderEntity);
+            this.xpInstantFeedbackSource1.ResolveSession += new System.EventHandler<DevExpress.Xpo.ResolveSessionEventArgs>(this.xpInstantFeedbackSource1_ResolveSession);
+            this.xpInstantFeedbackSource1.DismissSession += new System.EventHandler<DevExpress.Xpo.ResolveSessionEventArgs>(this.xpInstantFeedbackSource1_DismissSession);
+            // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colOID,
+            this.colName,
+            this.colLines});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            // 
+            // colOID
+            // 
+            this.colOID.FieldName = "OID";
+            this.colOID.Name = "colOID";
+            this.colOID.Visible = true;
+            this.colOID.VisibleIndex = 0;
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 1;
+            // 
+            // colLines
+            // 
+            this.colLines.FieldName = "Lines";
+            this.colLines.Name = "colLines";
+            this.colLines.Visible = true;
+            this.colLines.VisibleIndex = 2;
             // 
             // button1
             // 
@@ -158,6 +202,19 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
+            // entityInstantFeedbackSource1
+            // 
+            this.entityInstantFeedbackSource1.DefaultSorting = "OID ASC";
+            this.entityInstantFeedbackSource1.DesignTimeElementType = typeof(AutoMapperPOC.DAL.EF.OrderEntity);
+            this.entityInstantFeedbackSource1.KeyExpression = "OID";
+            this.entityInstantFeedbackSource1.GetQueryable += new System.EventHandler<DevExpress.Data.Linq.GetQueryableEventArgs>(this.entityInstantFeedbackSource1_GetQueryable);
+            this.entityInstantFeedbackSource1.DismissQueryable += new System.EventHandler<DevExpress.Data.Linq.GetQueryableEventArgs>(this.entityInstantFeedbackSource1_DismissQueryable);
+            // 
+            // linqInstantFeedbackSource1
+            // 
+            this.linqInstantFeedbackSource1.GetQueryable += new System.EventHandler<DevExpress.Data.Linq.GetQueryableEventArgs>(this.linqInstantFeedbackSource1_GetQueryable);
+            this.linqInstantFeedbackSource1.DismissQueryable += new System.EventHandler<DevExpress.Data.Linq.GetQueryableEventArgs>(this.linqInstantFeedbackSource1_DismissQueryable);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +249,12 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private System.Windows.Forms.Button button3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.Data.Linq.EntityInstantFeedbackSource entityInstantFeedbackSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colOID;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colLines;
+        private DevExpress.Xpo.XPInstantFeedbackSource xpInstantFeedbackSource1;
+        private LinqInstantFeedbackSource linqInstantFeedbackSource1;
     }
 }
 
