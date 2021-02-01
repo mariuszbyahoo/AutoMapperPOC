@@ -38,11 +38,5 @@ namespace AutoMapperPOC.Domain
             _ctx.Orders.AddRange(entities);
             _ctx.SaveChanges();
         }
-
-        public void AssignInstantFeedbackSource(object sender, GetQueryableEventArgs e)
-        {
-            e.QueryableSource = _ctx.Orders.UseAsDataSource(AutoMapperConfiguration.GetConfig()).For<Order>();
-            e.Tag = _ctx;
-        }
     }
 }

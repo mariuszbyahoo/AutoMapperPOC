@@ -24,16 +24,18 @@ namespace AutoMapperPOC.View
             _xpoSrv = new XPOrdersService();
             InitializeComponent();
             AutoMapperConfiguration.GetConfig();
+            this.linqInstantFeedbackSource1.KeyExpression = nameof(Order.OID);
+            this.entityInstantFeedbackSource1.KeyExpression = nameof(Order.OID);
             this.entityInstantFeedbackSource1.GetQueryable += entityInstantFeedbackSource1_GetQueryable;
             this.entityInstantFeedbackSource1.DismissQueryable += entityInstantFeedbackSource1_DismissQueryable;
             this.xpInstantFeedbackSource1.ResolveSession += xpInstantFeedbackSource1_ResolveSession;
             this.xpInstantFeedbackSource1.DismissSession += xpInstantFeedbackSource1_DismissSession;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var _ctx = new POCContext();
-            this.gridControl1.DataSource = linqInstantFeedbackSource1;
+            this.gridControl1.DataSource = entityInstantFeedbackSource1;
             this.gridControl1.Refresh();
         }
 
@@ -43,23 +45,24 @@ namespace AutoMapperPOC.View
             this.gridControl1.Refresh();
         }
 
+        private void linqButton_Click(object sender, EventArgs e)
+        {
+            this.gridControl1.DataSource = linqInstantFeedbackSource1;
+            this.gridControl1.Refresh();
+        }
+
         private void button3_Click(object sender, EventArgs e) 
         {
             _efSrv.WygenerujWpisy();
         }
-
-
-
-        /* Po odkomentowaniu linii używających UseAsDataSource poniżej aplikacja zwraca exception i nie pokazuje żadnych rekordów zarówno dla EntityInstantFeedbackSource jak i Linq(...) */
-
-
 
         void entityInstantFeedbackSource1_GetQueryable(object sender, DevExpress.Data.Linq.GetQueryableEventArgs e)
         {
             try
             {
                 var _ctx = new POCContext();
-                e.QueryableSource = _ctx.Orders;//.UseAsDataSource(AutoMapperConfiguration.GetConfig()).For<Order>().Where(o => o.Name.Contains('6'));
+                e.QueryableSource = _ctx.Orders.ProjectTo<Order>(AutoMapperConfiguration.GetConfig());
+                //e.QueryableSource = _ctx.Orders.UseAsDataSource(AutoMapperConfiguration.GetConfig()).For<Order>();
                 e.Tag = _ctx;
             }
             catch (Exception ex)
@@ -93,7 +96,8 @@ namespace AutoMapperPOC.View
         private void linqInstantFeedbackSource1_GetQueryable(object sender, DevExpress.Data.Linq.GetQueryableEventArgs e)
         {
             var _ctx = new POCContext();
-            e.QueryableSource = _ctx.Orders;//.UseAsDataSource(AutoMapperConfiguration.GetConfig()).For<Order>();
+            //e.QueryableSource = _ctx.Orders.UseAsDataSource(AutoMapperConfiguration.GetConfig()).For<Order>();
+            e.QueryableSource = _ctx.Orders.ProjectTo<Order>(AutoMapperConfiguration.GetConfig());
             e.Tag = _ctx;
         }
     }

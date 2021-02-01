@@ -1,5 +1,6 @@
 ﻿using AutoMapperPOC.DAL.XPO;
 using DevExpress.Data.Linq;
+using DevExpress.XtraEditors;
 
 namespace AutoMapperPOC.View
 {
@@ -49,6 +50,8 @@ namespace AutoMapperPOC.View
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.entityInstantFeedbackSource1 = new DevExpress.Data.Linq.EntityInstantFeedbackSource();
             this.linqInstantFeedbackSource1 = new DevExpress.Data.Linq.LinqInstantFeedbackSource();
+            this.linqButton = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -58,10 +61,12 @@ namespace AutoMapperPOC.View
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.linqButton);
             this.layoutControl1.Controls.Add(this.button3);
             this.layoutControl1.Controls.Add(this.button2);
             this.layoutControl1.Controls.Add(this.gridControl1);
@@ -86,9 +91,9 @@ namespace AutoMapperPOC.View
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(318, 221);
+            this.button2.Location = new System.Drawing.Point(420, 220);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(302, 21);
+            this.button2.Size = new System.Drawing.Size(200, 22);
             this.button2.TabIndex = 6;
             this.button2.Text = "Load from XPO";
             this.button2.UseVisualStyleBackColor = true;
@@ -100,7 +105,7 @@ namespace AutoMapperPOC.View
             this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(608, 205);
+            this.gridControl1.Size = new System.Drawing.Size(608, 204);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -145,9 +150,9 @@ namespace AutoMapperPOC.View
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 221);
+            this.button1.Location = new System.Drawing.Point(12, 220);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(302, 21);
+            this.button1.Size = new System.Drawing.Size(200, 22);
             this.button1.TabIndex = 4;
             this.button1.Text = "Load from EF";
             this.button1.UseVisualStyleBackColor = true;
@@ -161,7 +166,8 @@ namespace AutoMapperPOC.View
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem5});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(632, 278);
             this.Root.TextVisible = false;
@@ -169,9 +175,9 @@ namespace AutoMapperPOC.View
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.button1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 209);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 208);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(306, 25);
+            this.layoutControlItem1.Size = new System.Drawing.Size(204, 26);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -180,16 +186,16 @@ namespace AutoMapperPOC.View
             this.layoutControlItem2.Control = this.gridControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(612, 209);
+            this.layoutControlItem2.Size = new System.Drawing.Size(612, 208);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.button2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(306, 209);
+            this.layoutControlItem3.Location = new System.Drawing.Point(408, 208);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(306, 25);
+            this.layoutControlItem3.Size = new System.Drawing.Size(204, 26);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -215,6 +221,25 @@ namespace AutoMapperPOC.View
             this.linqInstantFeedbackSource1.GetQueryable += new System.EventHandler<DevExpress.Data.Linq.GetQueryableEventArgs>(this.linqInstantFeedbackSource1_GetQueryable);
             this.linqInstantFeedbackSource1.DismissQueryable += new System.EventHandler<DevExpress.Data.Linq.GetQueryableEventArgs>(this.linqInstantFeedbackSource1_DismissQueryable);
             // 
+            // linqButton
+            // 
+            this.linqButton.Location = new System.Drawing.Point(216, 220);
+            this.linqButton.Name = "linqButton";
+            this.linqButton.Size = new System.Drawing.Size(200, 22);
+            this.linqButton.StyleController = this.layoutControl1;
+            this.linqButton.TabIndex = 8;
+            this.linqButton.Text = "load from linqInstant...";
+            this.linqButton.Click += new System.EventHandler(this.linqButton_Click);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.linqButton;
+            this.layoutControlItem5.Location = new System.Drawing.Point(204, 208);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(204, 26);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,6 +257,7 @@ namespace AutoMapperPOC.View
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,6 +281,8 @@ namespace AutoMapperPOC.View
         private DevExpress.XtraGrid.Columns.GridColumn colLines;
         private DevExpress.Xpo.XPInstantFeedbackSource xpInstantFeedbackSource1;
         private LinqInstantFeedbackSource linqInstantFeedbackSource1;
+        private SimpleButton linqButton;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }
 
